@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .main{
+        height: 100%;
+        width: 80%;
+        /* background: #000; */
+        margin: 0 auto;
+        /* position: relative; */
+        /* top: 0;
+        left: 0; */
+    }
+    .elipse{
+        /* height: 100%;
+        width: 100%; */
+        position: fixed;
+        bottom:0;
+        left: 15%;
+        /* background: red;  */
+    }
+    .elipse svg{ 
+        margin: 0 auto;
+    }
+    #bubble{
+        position: absolute;
+        left: 75%;
+        top: 30%;
+        transform: rotate(35deg);
+        opacity: 0;
+
+        transform-origin: bottom right 90px;
+    }
+    #bubble-shadow{
+        position: absolute;
+        left: 75%;
+        top: 31%;
+        transform: rotate(0deg);
+        opacity: 0;
+        /* background: red !important; */
+    }
+</style>
+<body>
+    
+    <div class="main">
+        
+        <div class="elipse">
+            <svg id="bubble-shadow" width="42" height="41" viewBox="0 0 72 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M54.9648 70.8923C39.1224 43.0087 65.8192 15.1211 45.7448 8.95489C25.6705 2.78872 5.72509 35.3683 5.72509 35.3683L54.9648 70.8923Z" fill="#2DEAA6"/>
+                </svg>
+                
+            <svg id="bubble" width="55" height="57" viewBox="0 0 65 117"           fill="none xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.273438 48.8057C0.273438 75.7604 14.6003 117 32.2734 117C49.9465 117 64.2734 75.7604 64.2734 48.8057C64.2734 21.8511 49.9465 0 32.2734 0C14.6003 0 0.273438 21.8511 0.273438 48.8057Z" fill="#2DEAA6"/>
+            </svg>
+            
+            <svg width="1000" height="300" viewBox="0 0 1792 389" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1792 896C1792 778.336 1768.82 661.823 1723.8 553.116C1678.77 444.408 1612.77 345.634 1529.57 262.432C1446.37 179.231 1347.59 113.232 1238.88 68.2039C1130.18 23.1757 1013.66 -5.14327e-06 896 0C778.336 5.14328e-06 661.823 23.1757 553.116 68.204C444.408 113.232 345.634 179.231 262.432 262.432C179.231 345.634 113.232 444.408 68.2039 553.116C23.1757 661.823 -1.02865e-05 778.336 0 896L896 896H1792Z" fill="#2DEAA6"/>
+                </svg>
+                
+        </div>
+    </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+        <script>
+        //    gsap.from("#bubble", {rotate:40});
+
+    gsap.from("#bubble-shadow", {scale:0,opacity:0});
+    gsap.from("#bubble", {scale:0,opacity:0,x:-50,y:50});
+
+
+    gsap.to("#bubble-shadow", {scale:1,opacity:1});
+    gsap.to("#bubble", {scale:1,opacity:1});
+
+    gsap.from("#bubble-shadow", {duration: 1,x:-40, y:80,delay:.0});
+    gsap.to("#bubble-shadow", {duration: 1,x:-0, y:20,scale:0,delay:1});
+
+    gsap.to("#bubble", {duration: 1,x:-0, y:-10,scaleX:1.4});
+    gsap.to("#bubble", {duration: 1,x:50, y:-90,delay:.5,ease:"back.out(4)"});
+
+    gsap.to("#bubble", {duration: 1,x:-200, y:-150,delay:1,scaleX:1.75});
+
+    gsap.to("#bubble", {duration: 1,x:-400, y:-120,delay:1,scaleX:1.75});
+
+  
+
+    gsap.to("#bubble", {duration: 1.5,x:-700, y:-20,delay:1.5,scaleX:1.75});
+
+    gsap.to("#bubble", {duration: 1.5,x:-650, y:20,delay:1.6,scaleX:1.75});
+    gsap.to("#bubble", {duration: 1.5,x:-650, y:10,delay:1.7,scaleX:1.75});
+
+    gsap.to("#bubble", {duration: 1.5,x:-650, y:80,delay:2.5,scaleX:1.75,});
+
+    gsap.to("#bubble", {duration: 1.5,x:-650, y:110,delay:3.5,scaleX:1,ease:"back.out(4)"});
+
+
+        </script>
+</body>
+</html>
